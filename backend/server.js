@@ -1,17 +1,26 @@
 const express = require("express");
 const app = express();
 const dotenv = require("dotenv").config();
-const connectDb=require("./config/connectionDb")
+const connectDb = require("./config/connectionDb");
+const cors = require("cors");
 
-
+// Set up port from environment variables
 const PORT = process.env.PORT || 3000;
 
-connectDb() 
-app.use(express.json())
+// Establish database connection
+connectDb();
 
-// Use the recipe routes
-app.use("/recipe", require("./routes/recipe"));
+// Apply middleware
+app.use(express.json());  // For parsing application/json
+app.use(cors());  // Enable CORS for all domains
 
-app.listen(PORT, (err) => {
+// Importing route handlers
+const recipeRoutes = require("./routes/recipe");
+
+// Use recipe routes
+app.use("/recipe", recipeRoutes);
+
+// Start the server
+app.listen(PORT, () => {
     console.log(`App is listening on port ${PORT}`);
 });

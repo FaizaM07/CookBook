@@ -1,5 +1,6 @@
 import React from 'react'
 import bur from '../assets/bur.jpg'
+import RecipeItems from '../components/RecipeItems'
 
 
 
@@ -27,7 +28,12 @@ export default function Home() {
 
 </div>
 
-
+        <did className='recipe'> 
+          
+          <RecipeItems/>
+          
+          
+          </did>    
     </>
   )
 }

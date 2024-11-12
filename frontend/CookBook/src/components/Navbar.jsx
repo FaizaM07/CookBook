@@ -5,7 +5,7 @@ export default function Navbar() {
     return (
     <>
     <header>
-    <h2>Food Blog</h2>
+    <h2>CookBook</h2>
     <ul>
     <li>Home</li>
     <li>My Recipe</li>

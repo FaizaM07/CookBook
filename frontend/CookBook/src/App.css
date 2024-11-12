@@ -113,10 +113,11 @@ section{
   border-radius: 5px;
 }
 
-.card-body{
-  background-color: #d4f6e8;
+.card-body {
+  background-color: #000000; /* Black background */
   padding: 1rem;
 }
+
 
 .card-body .title{
   margin-bottom:5px;
