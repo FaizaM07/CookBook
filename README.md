@@ -2,8 +2,6 @@
 
 An application to save, organize, and manage own favorite recipes. Perfect for personal use, it allows user to store all recipe details, including ingredients, preparation steps, and tags.
 
-![🍲 Recipe Manager Banner](./banner-image.png)
-
 ## 🎨 Features
 
 ### 🔒 Core Features
