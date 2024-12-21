@@ -1,10 +1,14 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import bur from '../assets/bur.jpg'
 import RecipeItems from '../components/RecipeItems'
 
 
 
 export default function Home() {
+ const navigate=useNavigate() 
+
+
   return (
     <>
 
@@ -14,7 +18,7 @@ export default function Home() {
 
 <h1>      Food Recipe </h1>
         <h5> Unlock, organize, and savor your favorite recipes all in one place! From quick finds with tags to custom collections and favorites, Flavor Vault keeps your culinary creations just a tap away. Ready to build your ultimate recipe collection?    </h5>
-   <button> Share your recipe</button>
+   <button onClick={()=>navigate("/addRecipe")}> Share your recipe</button>
         </div>
 <div className='right'>
 <img src={bur} width="320px" height="300px" alt="Burger Image" />

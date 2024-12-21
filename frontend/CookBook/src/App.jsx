@@ -3,6 +3,7 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './App.css';
 import MainNavigation from './components/MainNavigation';
+import AddFoodRecipe from './pages/AddFoodRecipe';
 import Home from './pages/Home';
 
 // Function to fetch all recipes
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
             { path: "/", element: <Home />, loader: getAllRecipes },
             {path:"/myRecipe",element:<Home/>},
             {path:"/favRecipe",element:<Home/>},
+            {path:"/addRecipe",element:<AddFoodRecipe/>},
         ]
     },
 ]);
