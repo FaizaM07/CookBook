@@ -1,6 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
-import InputForm from './InputForm'
+import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import Mod from '../components/Mod';
+import InputForm from './InputForm';
+
+
 
 export default function Navbar() {
   const [isOpen,setIsOpen]=useState(false)
@@ -35,7 +38,7 @@ export default function Navbar() {
                 <li onClick={checkLogin}><p className='login'>{ (isLogin)? "Login": "Logout" }{user?.email ? `(${user?.email})` : ""}</p></li>
             </ul>
         </header>
-       { (isOpen) && <Modal onClose={()=>setIsOpen(false)}><InputForm setIsOpen={()=>setIsOpen(false)}/></Modal>}
+       { (isOpen) && <Mod onClose={()=>setIsOpen(false)}><InputForm setIsOpen={()=>setIsOpen(false)}/></Mod>}
     </>
   )
 }

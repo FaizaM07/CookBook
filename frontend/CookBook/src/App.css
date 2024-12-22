@@ -162,7 +162,7 @@ section{
   cursor: pointer;
 }
 
-.modal{
+.mod{
   position: fixed;
   top: 34%;
   z-index: 10;
