@@ -9,6 +9,8 @@ An application to save, organize, and manage own favorite recipes. Perfect for p
 - **🔍 View Recipe List**: Browse saved recipes with search and filter options.
 - **✏️ Edit Recipes**: Update recipe details like ingredients or preparation steps.
 - **❌ Delete Recipes**: Remove recipes you no longer want to keep.
+- ⭐ Add to Favorite List: Mark recipes as favorites for quick access.
+- 🌟 My Recipe List: Maintain a personalized list of recipes created by you.
 
 ### 💬 Additional Features
 - **🔗 Review Recipes**: Add multi-level comments to review recipes or discuss ideas.
