@@ -297,3 +297,17 @@ section{
 }
 
 
+/* Image Styling */
+.styled-image {
+  width: 300px; /* Adjust size as needed */
+  height: 300px; /* Keep aspect ratio for a square shape */
+  object-fit: cover; /* Ensure the image scales nicely */
+  border-radius: 50%; /* Circle shape */
+  border: 5px solid white; /* Optional border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  transition: transform 0.3s ease; /* Add a hover effect */
+}
+
+.styled-image:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
