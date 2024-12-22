@@ -1,38 +1,47 @@
-const express = require("express");
-const app = express();
-//const dotenv =require("dotenv").config();
-const connectDb = require("./config/connectionDb");
-const cors = require("cors");
-require('dotenv').config();
+const express=require("express")
+const app=express()
+const dotenv=require("dotenv").config()
+const connectDb=require("./config/connectionDb")
+const cors=require("cors")
 
+const router = express.Router();
 
+router.post('/', (req, res) => {
+    console.log('Request received at /recipe');
+    console.log('Request body:', req.body);
 
-
-
-
-
-// Set up port from environment variables
-const PORT = process.env.PORT || 3000;
-
-// Establish database connection
-connectDb();
-
-// Apply middleware
-app.use(express.json());  // For parsing application/json
-app.use(cors());  // Enable CORS for all domains
-app.use("/",require("./routes/user"))
-
-
-require('dotenv').config();
-console.log('Secret Key:', process.env.SECRET_KEY);  // This should output your secret key
-
-// Importing route handlers
-const recipeRoutes = require("./routes/recipe");
-
-// Use recipe routes
-app.use("/recipe", recipeRoutes);
-
-// Start the server
-app.listen(PORT, () => {
-    console.log(`App is listening on port ${PORT}`);
+    // Send a success response
+    res.status(201).json({ message: 'Recipe added successfully!', data: req.body });
 });
+
+module.exports = router;
+
+
+const PORT = process.env.PORT || 5000;
+connectDb()
+
+
+app.use((req, res, next) => {
+    console.log(`Incoming request: ${req.method} ${req.url}`);
+    next();
+});
+
+
+app.get('/test', (req, res) => {
+    res.json({ message: 'Backend is working!' });
+});
+
+
+
+
+
+app.use(express.json())
+app.use(cors())
+app.use(express.static("public"))
+
+app.use("/",require("./routes/user"))
+app.use("/recipe",require("./routes/recipe"))
+
+app.listen(PORT,(err)=>{
+    console.log(`app is listening on port ${PORT}`)
+})
