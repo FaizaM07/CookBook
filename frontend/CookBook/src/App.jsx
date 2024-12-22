@@ -1,37 +1,61 @@
-import axios from 'axios';
-import React from 'react';
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import './App.css';
-import MainNavigation from './components/MainNavigation';
-import AddFoodRecipe from './pages/AddFoodRecipe';
-import Home from './pages/Home';
+import axios from 'axios'
+import React from 'react'
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import './App.css'
+import MainNavigation from './components/MainNavigation'
+import AddFoodRecipe from './pages/AddFoodRecipe'
+import EditRecipe from './pages/EditRecipe'
+import Home from './pages/Home'
+import RecipeDetails from './pages/RecipeDetails'
 
-// Function to fetch all recipes
-const getAllRecipes = async () => {
-    try {
-        const response = await axios.get('http://localhost:5000/recipe');
-        return response.data;  // Return the data directly, which will be passed to the Home component
-    } catch (error) {
-        console.error("Failed to fetch recipes:", error);
-        return [];  // Return an empty array in case of error
-    }
+
+const getAllRecipes=async()=>{
+  let allRecipes=[]
+  await axios.get('http://localhost:5000/recipe').then(res=>{
+    allRecipes=res.data
+  })
+  return allRecipes
 }
 
-// Router setup
-const router = createBrowserRouter([
-    {
-        path: "/", 
-        element: <MainNavigation />, 
-        children: [
-            { path: "/", element: <Home />, loader: getAllRecipes },
-            {path:"/myRecipe",element:<Home/>},
-            {path:"/favRecipe",element:<Home/>},
-            {path:"/addRecipe",element:<AddFoodRecipe/>},
-        ]
-    },
-]);
+const getMyRecipes=async()=>{
+  let user=JSON.parse(localStorage.getItem("user"))
+  let allRecipes=await getAllRecipes()
+  return allRecipes.filter(item=>item.createdBy===user._id)
+}
 
-// App component
+const getFavRecipes=()=>{
+  return JSON.parse(localStorage.getItem("fav"))
+}
+
+const getRecipe=async({params})=>{
+  let recipe;
+  await axios.get(`http://localhost:5000/recipe/${params.id}`)
+  .then(res=>recipe=res.data)
+
+  await axios.get(`http://localhost:5000/user/${recipe.createdBy}`)
+  .then(res=>{
+    recipe={...recipe,email:res.data.email}
+  })
+
+  return recipe
+}
+
+const router=createBrowserRouter([
+  {path:"/",element:<MainNavigation/>,children:[
+    {path:"/",element:<Home/>,loader:getAllRecipes},
+    {path:"/myRecipe",element:<Home/>,loader:getMyRecipes},
+    {path:"/favRecipe",element:<Home/>,loader:getFavRecipes},
+    {path:"/addRecipe",element:<AddFoodRecipe/>},
+    {path:"/editRecipe/:id",element:<EditRecipe/>},
+    {path:"/recipe/:id",element:<RecipeDetails/>,loader:getRecipe}
+  ]}
+ 
+])
+
 export default function App() {
-    return <RouterProvider router={router} />;
+  return (
+   <>
+   <RouterProvider router={router}></RouterProvider>
+   </>
+  )
 }
