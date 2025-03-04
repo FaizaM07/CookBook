@@ -11,9 +11,10 @@ An application to save, organize, and manage own favorite recipes. Perfect for p
 - **❌ Delete Recipes**: Remove recipes you no longer want to keep.
 - ⭐ Add to Favorite List: Mark recipes as favorites for quick access.
 - 🌟 My Recipe List: Maintain a personalized list of recipes created by you.
+- **✏️ Multi Layer Comments**: You can comment on any recipe and also add reply to any comments. Multi Level .
 
 ### 💬 Additional Features
-- **🔗 Review Recipes**: Add multi-level comments to review recipes or discuss ideas.
+- **🔗 Review Recipes**: User can add review to the recipe.
 
 ## 🚀 Tools & Technologies
 
