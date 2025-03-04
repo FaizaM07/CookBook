@@ -7,6 +7,7 @@ import AddFoodRecipe from './pages/AddFoodRecipe'
 import EditRecipe from './pages/EditRecipe'
 import Home from './pages/Home'
 import RecipeDetails from './pages/RecipeDetails'
+import ReportPage from "./pages/ReportPage"
 
 
 const getAllRecipes=async()=>{
@@ -47,7 +48,9 @@ const router=createBrowserRouter([
     {path:"/favRecipe",element:<Home/>,loader:getFavRecipes},
     {path:"/addRecipe",element:<AddFoodRecipe/>},
     {path:"/editRecipe/:id",element:<EditRecipe/>},
+    { path: "/report", element: <ReportPage /> },
     {path:"/recipe/:id",element:<RecipeDetails/>,loader:getRecipe}
+   
   ]}
  
 ])
@@ -56,6 +59,11 @@ export default function App() {
   return (
    <>
    <RouterProvider router={router}></RouterProvider>
+  
    </>
   )
 }
+
+
+//-------------------------------------------------------------------------------------------------
+
