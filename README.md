@@ -1,4 +1,4 @@
-# 🍲 Recipe Manager Application
+# 🍲 Recipe Manager Application - CookBook
 
 An application to save, organize, and manage own favorite recipes. Perfect for personal use, it allows user to store all recipe details, including ingredients, preparation steps, and tags.
 
@@ -6,15 +6,17 @@ An application to save, organize, and manage own favorite recipes. Perfect for p
 
 ### 🔒 Core Features
 - **➕ Add New Recipes**: Save recipes with a title and an optional image.
+- **🔍 See Recipe Details**: Whole recipe in a detailed way with all ingredients, steps along with others comments.
 - **🔍 View Recipe List**: Browse saved recipes with search and filter options.
 - **✏️ Edit Recipes**: Update recipe details like ingredients or preparation steps.
-- **❌ Delete Recipes**: Remove recipes you no longer want to keep.
-- ⭐ Add to Favorite List: Mark recipes as favorites for quick access.
-- 🌟 My Recipe List: Maintain a personalized list of recipes created by you.
-- **✏️ Multi Layer Comments**: You can comment on any recipe and also add reply to any comments. Multi Level .
+- **❌ Delete Recipes**: Remove recipes user no longer want to keep.
+- **⭐ Add to Favorite List**: Mark recipes as favorites for quick access.
+- **🌟 My Recipe List**: Maintain a personalized list of recipes created by user.
+- **✏️ Multi Layer Comments**: User can comment on any recipe and also add reply to any comments. Multi Level .
 
 ### 💬 Additional Features
 - **🔗 Review Recipes**: User can add review to the recipe.
+- **🔗 AI Suggetion**: Customized AI suggetion for new recipe with same ingredients and so on .
 
 ## 🚀 Tools & Technologies
 
@@ -28,7 +30,7 @@ An application to save, organize, and manage own favorite recipes. Perfect for p
 
 ### ✉️ Authentication
 - **🔑 JWT**: Secure token-based authentication.
-- **⚡ OAuth**: Sign in with third-party services.
+- **⚡ OAuth**: Sign in with third-party services(Google and GitHub)
 - **🛠️ Email/Password**: Classic authentication method.
 
 ## 📔 Installation
