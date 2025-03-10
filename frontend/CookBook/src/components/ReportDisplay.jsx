@@ -1,6 +1,6 @@
 import axios from "axios";
 import jsPDF from "jspdf";
-import "jspdf-autotable"; // Allows tables inside PDF
+import "jspdf-autotable";
 import React, { useEffect, useState } from "react";
 import { FaFileCsv, FaFilePdf } from "react-icons/fa";
 
@@ -37,7 +37,7 @@ export default function ReportDisplay({ reportType }) {
         doc.text(`Generated on: ${new Date().toLocaleString()}`, 14, 35);
 
         if (reportType === "recipePerformance") {
-            // Top 5 Most Commented Recipes
+         
             if (Array.isArray(reportData.topCommented) && reportData.topCommented.length > 0) {
                 doc.text(" Top 5 Most Commented Recipes", 14, 45);
                 doc.autoTable({
@@ -47,7 +47,6 @@ export default function ReportDisplay({ reportType }) {
                 });
             }
 
-            // Top 5 Most Favorited Recipes
             if (Array.isArray(reportData.topFavorited) && reportData.topFavorited.length > 0) {
                 doc.text(" Top 5 Most Favorited Recipes", 14, doc.lastAutoTable.finalY + 10);
                 doc.autoTable({

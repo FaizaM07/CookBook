@@ -1,4 +1,4 @@
-/* Importing Google Fonts */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* CSS Variables for Theme Colors */
@@ -118,7 +118,7 @@ section {
   color: var(--text-secondary);
 }
 
-/* Card Styling */
+
 .card-container {
   width: 80%;
   margin: 2rem auto;
@@ -194,7 +194,7 @@ section {
   color: #FF4444;
 }
 
-/* Modal Styling */
+
 .mod {
   position: fixed;
   top: 50%;
@@ -220,15 +220,19 @@ section {
   z-index: 9;
 }
 
-/* Form Styling */
+
 .form {
   width: 100%;
   margin: 0 auto;
   text-align: center;
+  background-color: white; 
+  color: #5A7EB3; 
+  padding: 1.5rem;
+  border-radius: 8px;
 }
 
 .form-header {
-  background-color: var(--pastel-blue);
+  background-color: #5A7EB3; 
   height: 4px;
   margin-bottom: 2rem;
 }
@@ -238,7 +242,30 @@ section {
   align-items: center;
   gap: 1rem;
   margin-top: 1rem;
+  color: #5A7EB3; 
 }
+
+input, textarea, select {
+  color: #4A6A99; 
+  background-color: white; 
+  border: 1px solid #5A7EB3; 
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #5A7EB3; 
+  color: white; 
+  border: none;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #4A6A99; 
+}
+
 
 .form-control .input,
 .form-control .input-textarea {
@@ -290,7 +317,7 @@ section {
   margin-top: 0.5rem;
 }
 
-/* Footer Styling */
+
 .footer {
   width: 100%;
   padding: 1rem;
@@ -302,13 +329,12 @@ section {
   font-size: 0.9rem;
 }
 
-/* Active State */
 .active {
   background-color: var(--light-pastel-orange) !important;
   color: var(--text-primary) !important;
 }
 
-/* Image Styling */
+
 .styled-image {
   width: 300px;
   height: 300px;
@@ -324,7 +350,7 @@ section {
   border-color: var(--pastel-blue);
 }
 
-/* OAuth Buttons */
+
 .oauth-buttons {
   display: flex;
   gap: 1rem;
@@ -361,7 +387,7 @@ section {
   box-shadow: var(--shadow);
 }
 
-/* Comments Section */
+
 .comments-container {
   margin: 2rem auto;
   padding: 2rem;
@@ -417,7 +443,7 @@ section {
   transform: translateY(-2px);
 }
 
-/* Report Styling */
+
 .report-container,
 .premium-report-container {
   width: 90%;
@@ -469,7 +495,7 @@ section {
   font-size: 1.1rem;
 }
 
-/* Download Buttons */
+
 .download-buttons {
   display: flex;
   justify-content: center;

@@ -1,10 +1,9 @@
 const Comment = require("../models/comment");
 const Recipes = require("../models/recipe");
 
-// Add a comment (supports nested replies)
 const addComment = async (req, res) => {
     const { recipeId, content, parentComment } = req.body;
-    const user = req.user; // Comes from verifyToken middleware
+    const user = req.user; 
 
     if (!recipeId || !content) {
         return res.status(400).json({ message: "Recipe ID and content are required" });

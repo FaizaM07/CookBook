@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { FaPaperPlane, FaReply, FaUserCircle } from "react-icons/fa"; // Icons for better UI
+import { FaPaperPlane, FaReply, FaUserCircle } from "react-icons/fa";
 
 export default function CommentSection({ recipeId }) {
     const [comments, setComments] = useState([]);
