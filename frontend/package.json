@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "dev": "npm start"
+    "start": "react-scripts start"
+   
   },
   "dependencies": {
     "react": "^18.0.0",
